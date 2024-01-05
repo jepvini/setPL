@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # setPL.sh - Sets Intel Power Limit registers, allowing you to control the maximum
 # power consumption of the chip (ie, "overclock" for higher performance)
 #
-# Useage: setPL.sh <PL1 value in watts> <PL2 value in watts>
+# Usage: setPL.sh <PL1 value in watts> <PL2 value in watts>
 # Example: ./setPL.sh 25 25
 #
 # This script sets the power limits of modern Intel processors. PL1 defines
@@ -145,7 +145,7 @@ verifyAppInstalled() {
     toolName=$1
     if ! command -v "$toolName" &> /dev/null; then
         # app not installed
-       retVal=1 
+       retVal=1
     else
         retVal=0
     fi
@@ -277,4 +277,3 @@ else
     writePhysMemWord $((raplLimitAddr+0)) $lowNew
     writePhysMemWord $((raplLimitAddr+4)) $highNew
 fi
-
